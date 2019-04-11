@@ -6,19 +6,29 @@ import Footer from "./component/Footer"
 import todosData from "./component/todoData"
 
 
-function App(){
-  const todoItems = todosData.map(item => <MyApp key={item.id} item={item} />)
+class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+        todos: todosData
+    }
+  }
 
-  return(
-    <div>
-      <Header />
+  render() {
 
-      <div className="todo-list">
-        {todoItems}
-      </div> 
-      
-      <Footer />
-    </div>
-  )
+    const todoItems = this.state.todos.map(item => <MyApp key={item.id} item={item} />)
+  
+    return(
+      <div>
+        <Header />
+  
+        <div className="todo-list">
+          {todoItems}
+        </div> 
+        
+        <Footer />
+      </div>
+    )
+  }
 }
 export default App
