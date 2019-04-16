@@ -42,7 +42,6 @@ class App extends React.Component {
           {todoItems}
         </div> 
         
-        <Footer />
       </div>
     )
   }
